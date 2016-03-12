@@ -1,0 +1,23 @@
+.ng-invalid.ng-dirty{
+	border-color: red;
+}
+
+.ng-valid.ng-dirty{
+	border-color: green;
+}
+
+body {
+
+	font-family: Sans serif;
+
+}
+
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(glyphicons-halflings-regular.woff);
+}
+
+div {
+   font-family: myFirstFont;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-2.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="page-header">
+<div class="jumbotron">
+<h1>Learning jQuery</h1>
+</div>
+</div>
+
+<div class="container">
+ <button data-panelid="panel1" type="button" class="btn btn-primary btn-xs panel-button">BTN1</button>
+ <button data-panelid="panel2" type="button" class="btn btn-primary btn-xs panel-button">BTN2</button>
+ <button data-panelid="panel3" type="button" class="btn btn-primary btn-xs panel-button">BTN3</button>
+</div>
+
+<div 3ass="container">
+  <h2>Panel Group</h2>
+  <p>The panel-group class clears the bottom-margin. Try to remove the class and see what happens.</p>
+  <div class="panel-group">
+    <div id="panel1" class="panel panel-primary">
+      <div class="panel-heading">Panel1 Header</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div id="panel2" class="panel panel-primary">
+      <div class="panel-heading">Panel2 Header</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div id="panel3" class="panel panel-primary">
+      <div class="panel-heading">Panel3 Header</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+  </div>
+</div>
+<script>
+
+$(document).ready(function(){
+  //$("#panel1").slideUp(1000).delay(1000).slideDown(1000).fadeOut(1000).fadeIn(1000);
+  $("#panel3").fadeToggle(1000).fadeToggle(1000).css({color:"red","font-weight":"bold"});
+  $("#panel2").css({
+    opacity : 0.5
+  });
+  //$("#btn1").html("My Button");
+  /*$("#btn1").on('mouseover', function(){
+    $("#panel1").toggle(1000);
+  });
+  $("#btn2").on('mouseover', function(){
+    $("#panel2").slideToggle(1000);
+  });
+  $("#btn3").on('click', function(){
+    $("#panel3").toggle(1000);
+  });
+  $("#btn1").on('click', function(){
+    $("#panel1 .panel-body").html("My new panel");
+  });*/
+  $(".panel-button").on('click', function(){
+    //$("#panel1 .panel-body").html("My new panel");
+    var panelid = $(this).attr('data-panelid');
+   //alert(panelid);
+   //$("#"+panelid).toggle(1000);
+   var content = "New Content!!!";
+   $("#"+panelid+" .panel-body").html(content);
+  });
+});
+
+
+</script>
+</body>
+</html>
