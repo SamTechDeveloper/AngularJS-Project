@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TabPanelWidget </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-2.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/tabpanel.css">
+
+
+</head>
+<body>
+	<div class="tab-panels">
+		<ul class="tabs">
+			<li rel="panel1" class="active">panel1</li> <!-- can use data-panelid or other attributes-->
+			<li rel="panel2" >panel2</li>
+			<li rel="panel3" >panel3</li>
+			<li rel="panel4" >panel4</li>
+		</ul>
+
+			<div id="panel1" class="panel active">
+				content1<br/>
+				content1<br/>
+				content1<br/>
+				content1<br/>
+				content1<br/>
+			</div>
+			<div id="panel2" class="panel">
+				content2<br/>
+				content2<br/>
+				content2<br/>
+				content2<br/>
+				content2<br/>
+			</div>
+			<div id="panel3" class="panel">
+				content3<br/>
+				content3<br/>
+				content3<br/>
+				content3<br/>
+				content3<br/>
+			</div>
+			<div id="panel4" class="panel">
+				content4<br/>
+				content4<br/>
+				content4<br/>
+				content4<br/>
+				content4<br/>
+			</div>
+		</div>
+		<div class="tab-panels">
+		<ul class="tabs">
+			<li rel="panel5" class="active">panel5</li> <!-- can use data-panelid or other attributes-->
+			<li rel="panel6" >panel6</li>
+			<li rel="panel7" >panel7</li>
+			<li rel="panel8" >panel8</li>
+		</ul>
+
+			<div id="panel5" class="panel active">
+				content1<br/>
+				content1<br/>
+				content1<br/>
+				content1<br/>
+				content1<br/>
+			</div>
+			<div id="panel6" class="panel">
+				content2<br/>
+				content2<br/>
+				content2<br/>
+				content2<br/>
+				content2<br/>
+			</div>
+			<div id="panel7" class="panel">
+				content3<br/>
+				content3<br/>
+				content3<br/>
+				content3<br/>
+				content3<br/>
+			</div>
+			<div id="panel8" class="panel">
+				content4<br/>
+				content4<br/>
+				content4<br/>
+				content4<br/>
+				content4<br/>
+			</div>
+		</div>
+
+
+<script>
+$(function(){
+
+	$('.tab-panels .tabs li').on('click', function(){
+		var $panel = $(this).closest('.tab-panels');
+
+		$panel.find('.tabs li.active').removeClass('active');
+		$(this).addClass('active'); /*to highlight the tabs*/
+		//figure out whcich panel to show
+		var panelToShow = $(this).attr('rel');
+			//alert(panelToShow);
+
+		//hide current panels
+		$panel.find('.panel.active').slideUp(300, showNextPanel);
+
+				//show next panel
+			function showNextPanel(){
+				$(this).removeClass('active');
+				$('#'+panelToShow).slideDown(300, function(){
+					$(this).addClass('active'); /*te set panel active so  								it hides on next click*/
+				});
+			};
+		//show new panel
+	});
+
+
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>
