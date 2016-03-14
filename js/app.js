@@ -1,16 +1,19 @@
 
  var app = angular.module('gemStore', ['store-directives','ui.router']);
 
-    app.controller('StoreController', function($scope , $http){
-            $scope.storeproducts = [];
+    app.controller('StoreController', ['$http', function($http){
+
+            var store= this;
+
+            store.products = [];
 
             $http.get('storeproducts.json').success(function(data){
-            $scope.storeproducts = data;
+            store.products = data;
 
 
             });
 
-  });
+  }]);
 
   app.controller('ReviewController', function(){
 

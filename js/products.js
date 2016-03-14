@@ -3,12 +3,8 @@
   app.directive("productDescription", function() {
     return {
       restrict: 'E',
-      templateUrl: 'product-description.html',
-      controller: function(){
+      templateUrl: 'product-description.html'
 
-         $("#div1").slideUp(1000).slideDown(1000);
-
-        }
     };
   });
 
@@ -16,11 +12,7 @@
     return {
       restrict: 'E',
       templateUrl: 'product-reviews.html',
-      controller: function(){
 
-         $("#div3").slideUp(1000).slideDown(1000);
-
-        }
     };
   });
 
@@ -28,12 +20,6 @@
     return {
       restrict:"A",
       templateUrl: 'product-specs.html',
-      controller: function(){
-
-         $("#div2").slideUp(1000).slideDown(1000);
-          console.log("yes");
-
-        }
 
     };
   });
