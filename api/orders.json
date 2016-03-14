@@ -1,0 +1,19 @@
+[
+	{
+		"name": "a",
+		"drink": "b",
+		"id": "56e3f4cf8ba73f0100a8cb86"
+	}, {
+		"name": "g",
+		"drink": "g",
+		"id": "56e40ce98ba73f0100a8cb87"
+	}, {
+		"name": "awd",
+		"drink": "awd",
+		"id": "56e41b7c8ba73f0100a8cb88"
+	}, {
+		"name": "Delete",
+		"drink": "Doesn't work",
+		"id": "56e42f618ba73f0100a8cb91"
+	}
+]
